@@ -1,0 +1,85 @@
+body {
+    margin: 0px;
+    background-color:#eeeeee;
+    font-family: 'Cardo', serif;
+}
+.categories {
+    font-size: 16px;
+    color:#1089ff; /*JOA COLOR PORFA*/
+    padding-left: 20px;
+}
+::placeholder {
+    color: #1089ff; /*JOA COLOR PORFA*/
+}
+.carrusel {
+    width: 90%;
+    overflow: hidden; /* desbordamiento de la seccion scroll: barras de desp, auto: barra ver,hidden: oculto */
+    padding: 0px 30px;
+    position: relative; /* a partir de bloque, absolute: a partir del margen, sticky: pagajoso*/
+}
+.carrusel__container {
+    white-space: nowrap;
+    margin: 0px;
+    padding-bottom: 10px; /* Espacio abajo, right, left top */
+}
+.carrusel-item{
+    background-color: none;
+    width: 200px;
+    height: 230px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 2px;
+    cursor: auto;
+    transition: 450ms all;
+    transform-origin: center left;
+    border-radius: 10px;
+}
+.carrusel-item:hover ~ .carrusel-item {
+    transform: translate3d(50px,0,0); /* Hace que se recorra la imagen para mostrar la principal */
+}
+.carrusel__container:hover .carrusel-item{
+    opacity: 0.5; /*el elemento secundario tiene esta opacidad*/
+}
+.carrusel__container:hover .carrusel-item:hover{
+    transform: scale(1.2); /* define el tamaño del bloque que crecera */
+    opacity: 1;
+    border-radius: 10px;
+}
+.carrusel-item__img{
+    width: 200px;
+    height: 250px;
+    object-fit: cover; /* es como faja y se ajuste la imagen */
+}
+.carrusel-item__details{
+    /* background: linear-gradient(white); */
+    font-size: 13px;
+    font-weight: 900;
+    opacity: 0;
+    transition: 450 ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0px;
+    font-family: 'Cardo', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.carrusel-item:hover .carrusel-item__details{
+    opacity: 1.0;
+    margin-top: 160px;
+}
+.carrusel-item__details img{
+    width: 30px;
+    padding: 2px;
+}
+.carrusel-item:hover .carrusel-item__icon:hover {
+    transform: scale(1.2);
+}
+.carrusel-item__details--title, .carrusel-item__details--subtitle{
+    color: red; /*JOA COLOR*/
+    margin: 0px 5px 2px 0px;
+
+}

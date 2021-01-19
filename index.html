@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forma</title>
+    <script src="./script1.js"></script>
+</head>
+<body>
+    <section>
+        <form id="cotizador" name="cotizador">
+            <div>
+                Nombre: <input type="text" name="fname">
+                <p id="id_Nombre"></p>
+            </div>
+            <div>
+                Teléfono: <input type="tel" name="fphone" placeholder="55-5555-5555" onkeydown="limit(this, 10);" onkeyup="limit(this, 10);">
+                <p id="id_Telefono"></p>
+            </div>
+            <div>
+                Correo: <input type="email" name="femail" maxlength="50">
+                <p id="id_Correo"></p>
+            </div>
+            <div>
+                CP: <input type="text" name="fcp" onkeydown="limit(this, 5);" onkeyup="limit(this, 5);">
+                <p id="id_CP"></p>
+            </div>
+            <div>
+                Servicio:
+                <select id="fservice" name="service">
+                    <option value="">Selecciona</option>
+                    <option value="Cholchones">Cholchones</option>
+                    <option value="Sofas/Alfombra">Sofas/Alfombra</option>
+                    <option value="Autos">Autos</option>
+                    <option value="Cortina">Cortina</option>
+                </select>
+                <p id="id_Servicio"></p>
+            </div>
+            <div>
+                Piezas: <input type="number" name="fpieces" min="1" onkeydown="limit(this, 2);" onkeyup="limit(this, 2);">
+                <p id="id_Piezas"></p>
+            </div>
+            <div>
+                Mensaje: <input type="text" name="message">
+                <p id="id_Mensaje"></p>
+            </div>
+            <div>
+                <input type="button" value="Cotizar" id="submit" onclick="cotiza()">
+            </div>
+        </form>
+        <p id="result"></p>
+    </section>
+</body>
+</html>
